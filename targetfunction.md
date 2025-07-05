@@ -63,21 +63,21 @@ void SpookyHash::Hash128(const void *message, size_t length, uint64 *hash1, uint
 
 [brltty](https://github.com/brltty/brltty)
 
-brlapi__openConnection 涉及网络、配置解析和文件操作 (https://github.com/brltty/brltty/blob/master/Programs/brlapi_client.c) 
+1. brlapi__openConnection 涉及网络、配置解析和文件操作 (https://github.com/brltty/brltty/blob/master/Programs/brlapi_client.c) 
 ```
 /* Function: brlapi_openConnection
  * Creates a socket to connect to BrlApi */
 brlapi_fileDescriptor BRLAPI_STDCALL brlapi__openConnection(brlapi_handle_t *handle, const brlapi_connectionSettings_t *clientSettings, brlapi_connectionSettings_t *usedSettings)
 ```
 
-brlapi__enterTtyModeWithPath 涉及动态内存分配和对环境变量的解析
+2. brlapi__enterTtyModeWithPath 涉及动态内存分配和对环境变量的解析
 ```
 /* Function : brlapi_enterTtyModeWithPath */
 /* Takes control of a tty path */
 int BRLAPI_STDCALL brlapi__enterTtyModeWithPath(brlapi_handle_t *handle, const int *ttys, int nttys, const char *driverName)
 ```
 
-ignore_accept_keys 
+3. ignore_accept_keys 
 ```
 /* Function : ignore_accept_keys */
 /* Common tasks for ignoring and unignoring keys */
@@ -85,7 +85,7 @@ ignore_accept_keys
 static int ignore_accept_keys(brlapi_handle_t *handle, int what, brlapi_rangeType_t r, const brlapi_keyCode_t *code, unsigned int n)
 ```
 
-brlapi__doWaitForPacket 接收和分发来自服务器的所有数据包
+4. brlapi__doWaitForPacket 接收和分发来自服务器的所有数据包
 ```
 /* brlapi_doWaitForPacket */
 /* Waits for the specified type of packet: must be called with brlapi_req_mutex locked */
@@ -115,14 +115,38 @@ PTHREADPOOL_WEAK struct pthreadpool* pthreadpool_create(size_t threads_count)
 
 ---
 
-[cpu_features](https://github.com/google/cpu_features)
-
----
-
 [libaddressinput](https://github.com/google/libaddressinput)
+
+1. FillAddress 圈复杂度 103，调用函数数量 1029 (https://github.com/google/libaddressinput/blob/master/cpp/src/address_input_helper.cc)
+```
+// Fill in missing components of an address as best as we can based on
+// existing data. For example, for some countries only one postal code is
+// valid; this would enter that one. For others, the postal code indicates
+// what state should be selected. Existing data will never be overwritten.
+//
+// Note that the preload supplier must have had the rules for the country
+// represented by this address loaded before this method is called - otherwise
+// an assertion failure will result.
+//
+// The address should have the best language tag as returned from
+// BuildComponents().
+void AddressInputHelper::FillAddress(AddressData* address)
+```
+
+2. Normalize (https://github.com/google/libaddressinput/blob/master/cpp/src/address_normalizer.cc)
+```
+// Converts the names of different fields in the address into their canonical
+// form. Should be called only when supplier->IsLoaded() returns true for
+// the region code of the |address|.
+void AddressNormalizer::Normalize(AddressData* address)
+```
 
 ---
 
 [libsecret](https://gitlab.gnome.org/GNOME/libsecret.git)
 
+1. secret_service_search_sync 根据一组属性在密钥服务中进行同步搜索 (https://gitlab.gnome.org/GNOME/libsecret/-/blob/main/libsecret/secret-methods.c)
+```
+GList *secret_service_search_sync (SecretService *service, const SecretSchema *schema, GHashTable *attributes, SecretSearchFlags flags, GCancellable *cancellable, GError **error)
+```
 ---
