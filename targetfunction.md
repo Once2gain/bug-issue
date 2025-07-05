@@ -1,5 +1,6 @@
 ---
 [cardboard](https://github.com/googlevr/cardboard)
+Open source Cardboard SDK and samples. This SDK provides everything you need to create your own Virtual Reality (VR) experiences for Google Cardboard.
 
 1. LoadObjFile
 ```
@@ -17,6 +18,7 @@ bool LoadObjFile(AAssetManager* mgr, const std::string& file_name, std::vector<G
 ---
 
 [openxr-sdk](https://github.com/khronosgroup/openxr-sdk)
+Generated headers and sources for OpenXR loader.
 
 1. JSON清单文件解析 CreateIfValid (https://github.com/KhronosGroup/OpenXR-SDK/blob/main/src/loader/manifest_file.cpp)
 
@@ -33,6 +35,7 @@ LOADER_EXPORT XRAPI_ATTR XrResult XRAPI_CALL xrCreateInstance(const XrInstanceCr
 ---
 
 [smhasher](https://github.com/aappleby/smhasher)
+SMHasher is a test suite designed to test the distribution, collision, and performance properties of non-cryptographic hash functions.
 
 1. lookup3 (https://github.com/aappleby/smhasher/blob/master/src/lookup3.cpp)
 ```
@@ -62,6 +65,7 @@ void SpookyHash::Hash128(const void *message, size_t length, uint64 *hash1, uint
 ---
 
 [brltty](https://github.com/brltty/brltty)
+BRLTTY is a background process (daemon) providing access to the Linux/Unix console (when in text mode) for a blind person using a refreshable braille display.
 
 1. brlapi__openConnection 涉及网络、配置解析和文件操作 (https://github.com/brltty/brltty/blob/master/Programs/brlapi_client.c) 
 ```
@@ -102,6 +106,7 @@ static ssize_t brlapi__doWaitForPacket(brlapi_handle_t *handle, brlapi_packetTyp
 ---
 
 [pthreadpool](https://github.com/google/pthreadpool)
+Portable (POSIX/Windows/Emscripten) thread pool for C/C++
 
 1. pthreadpool_parallelize_4d_tile_2d_dynamic_with_uarch 未发现的复杂度: 115, 圈复杂度: 21 (https://github.com/google/pthreadpool/blob/main/src/portable-api.c)
 ```
@@ -116,6 +121,7 @@ PTHREADPOOL_WEAK struct pthreadpool* pthreadpool_create(size_t threads_count)
 ---
 
 [libaddressinput](https://github.com/google/libaddressinput)
+Google’s postal address library, powering Android and Chromium
 
 1. FillAddress 圈复杂度 103，调用函数数量 1029 (https://github.com/google/libaddressinput/blob/master/cpp/src/address_input_helper.cc)
 ```
@@ -144,9 +150,25 @@ void AddressNormalizer::Normalize(AddressData* address)
 ---
 
 [libsecret](https://gitlab.gnome.org/GNOME/libsecret.git)
+A GObject-based library for storing and receiving secrets.
 
 1. secret_service_search_sync 根据一组属性在密钥服务中进行同步搜索 (https://gitlab.gnome.org/GNOME/libsecret/-/blob/main/libsecret/secret-methods.c)
 ```
 GList *secret_service_search_sync (SecretService *service, const SecretSchema *schema, GHashTable *attributes, SecretSearchFlags flags, GCancellable *cancellable, GError **error)
 ```
+---
+
+[libutf](https://github.com/cls/libutf)
+This is a C89 UTF-8 library, with an API compatible with that of Plan 9's libutf, but with a number of improvements
+
+1. utfnlen 计算一个 UTF-8 字符串中包含多少个 Rune 字符 (https://github.com/cls/libutf/blob/master/utf/utflen.c)
+```
+size_t utfnlen(const char *s, size_t len)
+```
+
+2. charntorune 核心解析引擎，负责将一个字节序列转换为一个 Rune (https://github.com/cls/libutf/blob/master/utf/chartorune.c)
+```
+int charntorune(Rune *p, const char *s, size_t len)
+```
+
 ---
