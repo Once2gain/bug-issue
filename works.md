@@ -159,7 +159,7 @@ size_t utfnlen(const char *s, size_t len)
 int charntorune(Rune *p, const char *s, size_t len)
 ```
 
-## 仍未编译成功的 Google chrome 项目，准备跑新一轮的自动编译实验
+## 仍未编译成功的 Google chrome 项目，准备跑新一轮的自动编译实验 new-projects
 
 - https://chromium.googlesource.com/angle/angle
 - https://github.com/google/anonymous-tokens
