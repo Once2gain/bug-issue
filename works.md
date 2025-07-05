@@ -1,4 +1,5 @@
----
+## 目前 end-to-end 实验已经成功，感觉可以持续 Fuzzing 的函数
+
 #### [cardboard](https://github.com/googlevr/cardboard)
 Open source Cardboard SDK and samples. This SDK provides everything you need to create your own Virtual Reality (VR) experiences for Google Cardboard.
 
@@ -15,8 +16,6 @@ Open source Cardboard SDK and samples. This SDK provides everything you need to 
 bool LoadObjFile(AAssetManager* mgr, const std::string& file_name, std::vector<GLfloat>* out_vertices, std::vector<GLfloat>* out_normals, std::vector<GLfloat>* out_uv, std::vector<GLushort>* out_indices)
 ```
 
----
-
 #### [openxr-sdk](https://github.com/khronosgroup/openxr-sdk)
 Generated headers and sources for OpenXR loader.
 
@@ -31,8 +30,6 @@ void ApiLayerManifestFile::CreateIfValid(ManifestFileType type, const std::strin
 ```
 LOADER_EXPORT XRAPI_ATTR XrResult XRAPI_CALL xrCreateInstance(const XrInstanceCreateInfo *info, XrInstance *instance)
 ```
-
----
 
 #### [smhasher](https://github.com/aappleby/smhasher)
 SMHasher is a test suite designed to test the distribution, collision, and performance properties of non-cryptographic hash functions.
@@ -61,8 +58,6 @@ uint64_t MurmurHash64A ( const void * key, int len, uint64_t seed )
 // do the whole hash in one call
 void SpookyHash::Hash128(const void *message, size_t length, uint64 *hash1, uint64 *hash2)
 ```
-
----
 
 #### [brltty](https://github.com/brltty/brltty)
 BRLTTY is a background process (daemon) providing access to the Linux/Unix console (when in text mode) for a blind person using a refreshable braille display.
@@ -103,8 +98,6 @@ static int ignore_accept_keys(brlapi_handle_t *handle, int what, brlapi_rangeTyp
 static ssize_t brlapi__doWaitForPacket(brlapi_handle_t *handle, brlapi_packetType_t expectedPacketType, void *packet, size_t packetSize, struct timeval *deadline)
 ```
 
----
-
 #### [pthreadpool](https://github.com/google/pthreadpool)
 Portable (POSIX/Windows/Emscripten) thread pool for C/C++
 
@@ -117,8 +110,6 @@ PTHREADPOOL_WEAK void pthreadpool_parallelize_4d_tile_2d_dynamic_with_uarch(pthr
 ```
 PTHREADPOOL_WEAK struct pthreadpool* pthreadpool_create(size_t threads_count)
 ```
-
----
 
 #### [libaddressinput](https://github.com/google/libaddressinput)
 Google’s postal address library, powering Android and Chromium
@@ -147,8 +138,6 @@ void AddressInputHelper::FillAddress(AddressData* address)
 void AddressNormalizer::Normalize(AddressData* address)
 ```
 
----
-
 #### [libsecret](https://gitlab.gnome.org/GNOME/libsecret.git)
 A GObject-based library for storing and receiving secrets.
 
@@ -156,7 +145,6 @@ A GObject-based library for storing and receiving secrets.
 ```
 GList *secret_service_search_sync (SecretService *service, const SecretSchema *schema, GHashTable *attributes, SecretSearchFlags flags, GCancellable *cancellable, GError **error)
 ```
----
 
 #### [libutf](https://github.com/cls/libutf)
 This is a C89 UTF-8 library, with an API compatible with that of Plan 9's libutf, but with a number of improvements
@@ -171,4 +159,28 @@ size_t utfnlen(const char *s, size_t len)
 int charntorune(Rune *p, const char *s, size_t len)
 ```
 
----
+## 仍未编译成功的 Google chrome 项目，准备跑新一轮的自动编译实验
+
+- https://chromium.googlesource.com/angle/angle
+- https://github.com/google/anonymous-tokens
+- https://github.com/chromium/content_analysis_sdk
+- https://chromium.googlesource.com/crashpad/crashpad
+- https://dawn.googlesource.com/dawn
+- https://github.com/google/ink.git
+- https://chromium.googlesource.com/deps/inspector_protocol/
+- https://chromium.googlesource.com/codecs/libgav1/
+- https://github.com/google/mediapipe
+- https://gitlab.freedesktop.org/mesa/mesa
+- https://chromium.googlesource.com/chromiumos/platform/minigbm
+- https://github.com/google/perfetto/
+- https://github.com/google/private-join-and-compute
+- https://github.com/Nicoshev/rapidhash.git
+- https://github.com/google/ruy
+- https://github.com/google/securemessage
+- https://github.com/google/shell-encryption
+- https://skia.googlesource.com/skia.git
+- https://github.com/tensorflow/text.git
+- https://github.com/tensorflow/tflite-support
+- https://github.com/google/ukey2
+- https://chromium.googlesource.com/chromium/src/+archive/main/chrome/updater.tar.gz
+- https://chromium.googlesource.com/external/webrtc
